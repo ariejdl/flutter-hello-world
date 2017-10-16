@@ -5,9 +5,8 @@
 # https://github.com/flutter/posse_gallery/blob/master/.travis.yml
 
 #language: dart
-language: android
-# language: objective-c
-
+#language: android
+language: objective-c
 os: osx
 
 install:
@@ -25,7 +24,7 @@ before_install:
 jobs:
   include:
     # produces: build/app/outputs/apk/app-release.apk
-    - script: ./android_build
+    - script: ./ios_build
 
 # safelist of branches to build
 branches:
