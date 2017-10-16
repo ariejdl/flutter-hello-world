@@ -6,6 +6,9 @@ language: dart
 dart:
   - stable
 
+install:
+  - git clone https://github.com/flutter/flutter.git --depth 1
+
 jobs:
   include:
     # produces: build/app/outputs/apk/app-release.apk
