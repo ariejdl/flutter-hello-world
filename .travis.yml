@@ -8,6 +8,7 @@ dart:
 
 install:
   - git clone https://github.com/flutter/flutter.git --depth 1
+  - export PATH=$(pwd)/flutter/bin:$PATH
 
 before_install:
   - chmod +x ./android_build ./ios_build
