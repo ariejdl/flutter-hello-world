@@ -1,7 +1,11 @@
 
 # https://docs.travis-ci.com/user/languages/dart/
 
+# useful:
+# https://github.com/flutter/posse_gallery/blob/master/.travis.yml
+
 language: dart
+
 # os: osx
 dart:
   - stable
@@ -9,9 +13,12 @@ dart:
 install:
   - git clone https://github.com/flutter/flutter.git --depth 1
   - export PATH=$(pwd)/flutter/bin:$PATH
+  - flutter doctor
 
 before_install:
   - chmod +x ./android_build ./ios_build
+  - chmod +x ./install_android
+  - ./install_android
 
 jobs:
   include:
