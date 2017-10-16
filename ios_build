@@ -1,0 +1,2 @@
+flutter packages get
+flutter build ios --release

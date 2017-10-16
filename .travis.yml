@@ -1,0 +1,17 @@
+
+# https://docs.travis-ci.com/user/languages/dart/
+
+language: dart
+# os: osx
+dart:
+  - stable
+
+jobs:
+  include:
+    # produces: build/app/outputs/apk/app-release.apk
+    - script: ./android_build
+
+# safelist of branches to build
+branches:
+  only:
+    - release
