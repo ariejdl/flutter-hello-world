@@ -4,11 +4,11 @@
 # useful:
 # https://github.com/flutter/posse_gallery/blob/master/.travis.yml
 
-language: dart
+#language: dart
+language: android
+# language: objective-c
 
-# os: osx
-dart:
-  - stable
+os: osx
 
 install:
   - git clone https://github.com/flutter/flutter.git --depth 1
@@ -16,9 +16,11 @@ install:
   - flutter doctor
 
 before_install:
+  - brew tap dart-lang/dart
+  - brew install dart
   - chmod +x ./android_build ./ios_build
-  - chmod +x ./install_android
-  - ./install_android
+  #- chmod +x ./install_android
+  #- ./install_android
 
 jobs:
   include:
