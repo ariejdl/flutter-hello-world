@@ -9,6 +9,9 @@ dart:
 install:
   - git clone https://github.com/flutter/flutter.git --depth 1
 
+before_install:
+  - chmod +x ./android_build ./ios_build
+
 jobs:
   include:
     # produces: build/app/outputs/apk/app-release.apk
