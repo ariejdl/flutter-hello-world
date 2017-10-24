@@ -1,49 +1,28 @@
-
-
-
-
-# notes
-# https://docs.travis-ci.com/user/languages/dart/
-# useful:
-# https://github.com/flutter/posse_gallery/blob/master/.travis.yml
-
-# relevant alternatives
-#language: dart
-#language: android
 language: objective-c
 os: osx
 osx_image: xcode9.1
-
 install:
-  - brew tap dart-lang/dart
-  - brew install dart
-  - chmod +x ./android_build ./ios_build
-  - git clone https://github.com/flutter/flutter.git --depth 1
-  - export PATH=$(pwd)/flutter/bin:$PATH
-  - flutter doctor
-
+- brew tap dart-lang/dart
+- brew install dart
+- chmod +x ./android_build ./ios_build
+- git clone https://github.com/flutter/flutter.git --depth 1
+- export PATH=$(pwd)/flutter/bin:$PATH
+- flutter doctor
 jobs:
   include:
-    # produces: build/app/outputs/apk/app-release.apk
-    - script: ./ios_build
-
-# safelist of branches to build
+  - script: "./ios_build"
 branches:
   only:
-    - release
-
-# install travis:
-# brew install ruby
-# /usr/local/bin/gem install travis
-#
-# encrypt string
-# travis encrypt --add deploy.secret_access_key
-
+  - release
 deploy:
   provider: s3
-  access_key_id: "YOUR AWS ACCESS KEY"
-  bucket: "S3 Bucket"
+  access_key_id: "AKIAJZWITJFXNAITFJPA"
+  bucket: "tbs-bible-app"
   skip_cleanup: true
   local_dir: build/ios/iphoneos
+  on:
+    branch: release
   secret_access_key:
-    secure: JdeRmk/16Ka+Bda26zaxol94gii2hrWvmVxIX2jfrV7gGFGLBHJFyh6Po0fN+r9vaNNQbJ94QghtNMUwlnFClJOoAPQdIvrf7jgonCIqNxXedg2DqDn4/NftTkcN8Ud9ipTADVXGMRLh/jNCHQY9J3QVlo1Ig6cc/xJn8nBTe+c13b+w8oMmf7z+p6p5xfm+SBeAuFLX6sR79Ovkrz5iMbbdzdy7azVl4YTndTxwFHlc3gCZOIvMN/3WcfNPCg3ceRSrT2qBZqO6H7jyt53Fdkj9adoqUxUzUTSTuJ2Ld5e0fCVlyy00qY4/Czl9jKTaJmJpStH0GVJMmeJ4nTuzHstfV5QwW5wNVR+J8CgCmpGmbJnxYcIwzjIml+9nZskW7YmBIp4LRDfg2JoDdKCtoOU+4y22ZdzA4egv2Bn5IUXC1sZj+HfrJJLuwcstMOjCNSIQoyjw+TI5AoH9F7w6lSx1TnN/zZhsB9bfRZnviZW7tLoZJ8u9b1M5owi1EoYKc1Z/vVEhxMEwXiHprWMqkunq0+/PeS8d0ZXwNOQdwUulZfJDfrK33kPWeKsOzPr2ljyBnEfhknlWvgjuKwIM2MFPbw9odLtbcKvdWWz5UAQ9xLnmbbypB48xPeptlBi6YsaBBotCjZ0dP66tXAzXwrQtNY6bzW7qEUct2sT4yLI=
+    secure: pPip+NzRHLU/anq/erT49/UpIvpQTfBix9wcKcVdSqfPNMatjzy3qZ9jaJrSRk7zfOKMkj3Fr2FJPahhUnP1pq5ngXc3uiu+Dlh58gRVqmJGNHPzRUNee3Grs0nMkoqYHoffvENKFXrAlBefZWNU9UMzWWlNXBrQoNnPEjIfOMNZ5bY3cBhKoZLc6tJ2xnbHlnCMkksLNPwCKO9QpxZDFMGUDuGx77EuUZVT+aM9FUUkWtGYQCcuHAoPdabpZXmc7t9uCKT7L7fzhoI7VcYFsWN4enZq+JTFdxOztPrSNMnGZGkYKzmIoA+yZnPRWEbNLxtQjQmpHrNOcz5Cc8Ts2Dt3D55lOnbx72Ir/xOc+PyrTUn0hUseWo6ig9V9h74CzjQCBQC+1fYq7ulVrvXxS7TU0HJioMEKA3JX/MT+mIhdWi4kws/f8uIz8hkkK05Yp3rz3J9sQy6bl+2JXPIM5WfqIWACYvczv7ufKu7EDT5Zxiq5tfVeMunT8KhbUsHEaMuKRCGZuGXE9bVcsqNwfosBmoByqjfsOmDFe/bNbvLkCvF0UEqvwiXGdqNsMF9mI7RqoMKABisXBamI95YOHNi2B42SU44IJnmb9/iUP2F9nK8DgWSNxcX6mkl/jqriqIxaN/EZQdoh5hLLpqQ52yzn0L6X4oy1cI2bMQUn2eY=
+#env:
+  
