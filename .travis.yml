@@ -16,8 +16,8 @@ branches:
   - release
 deploy:
   provider: s3
-  access_key_id: "AKIAJZWITJFXNAITFJPA"
-  bucket: "tbs-bible-app"
+  access_key_id: AKIAJZWITJFXNAITFJPA
+  bucket: tbs-bible-app
   skip_cleanup: true
   local_dir: build/ios/iphoneos
   region: eu-west-1
@@ -25,5 +25,6 @@ deploy:
     branch: release
   secret_access_key:
     secure: pPip+NzRHLU/anq/erT49/UpIvpQTfBix9wcKcVdSqfPNMatjzy3qZ9jaJrSRk7zfOKMkj3Fr2FJPahhUnP1pq5ngXc3uiu+Dlh58gRVqmJGNHPzRUNee3Grs0nMkoqYHoffvENKFXrAlBefZWNU9UMzWWlNXBrQoNnPEjIfOMNZ5bY3cBhKoZLc6tJ2xnbHlnCMkksLNPwCKO9QpxZDFMGUDuGx77EuUZVT+aM9FUUkWtGYQCcuHAoPdabpZXmc7t9uCKT7L7fzhoI7VcYFsWN4enZq+JTFdxOztPrSNMnGZGkYKzmIoA+yZnPRWEbNLxtQjQmpHrNOcz5Cc8Ts2Dt3D55lOnbx72Ir/xOc+PyrTUn0hUseWo6ig9V9h74CzjQCBQC+1fYq7ulVrvXxS7TU0HJioMEKA3JX/MT+mIhdWi4kws/f8uIz8hkkK05Yp3rz3J9sQy6bl+2JXPIM5WfqIWACYvczv7ufKu7EDT5Zxiq5tfVeMunT8KhbUsHEaMuKRCGZuGXE9bVcsqNwfosBmoByqjfsOmDFe/bNbvLkCvF0UEqvwiXGdqNsMF9mI7RqoMKABisXBamI95YOHNi2B42SU44IJnmb9/iUP2F9nK8DgWSNxcX6mkl/jqriqIxaN/EZQdoh5hLLpqQ52yzn0L6X4oy1cI2bMQUn2eY=
-#env:
-  
+env:
+  global:
+    secure: fPE4EY1b/Gg6cznEiedzPg+GLXm1UY/Ye3G7snYirl74tW67CvxuosE+KHq6+YGAR51fOwwPOF4wbm65eIDZAVrwPXAR64YFDzOGH8mKoIfwqjlYixLcxaEr3HC5xcDDIvEOD7TZKjF7+LzxPOTLSGig+b9vfdHl+J/Udc9tO6WhPrfr84Y8DyYJx6ja9pk03u1SC7H7I54LlsYXQx+PNuWKnVgcvV2l04KufCaFKIFB2Ff51qxH5s3h11i0xVZG9hOfz8z9J+h8fJQ5KNRGs8WAWrMjXWUmibf8UT+Xd7DvxCgTJUkXT1UKDHIeAu/k2kkTDfmHtIwB5PM2hiLhEcKPrKEl/YrfRAvJDN+GrKXKM75dJGCSSz2oxfaWsw4En8teGiaabZhMIkWmzTUFod6v9Q3tkT3+Ir2gApzl13QNBfkDnuc3m2JRj1u4qTylBBmwyas3SC3Aro1Qkou1hwQ238R4AVkigFm3+N5oW+hLb2kcnCUfTscDv2FN3mDO7tEBqnk33px/BD5dUxMI6d24+8MdXS3AZU9aX+UkZFji8c0CV3uNQS+jf5fjRG9NTSiWF2KwhQY3HCwPBlSmTf4WrOPY4+f24wLIvk3ezLUuX180HEGcqq3QunBAma1HKnKlVnMV1ulre35A1RdagAkuEE+1fs1eAXxOlWGHufA=
