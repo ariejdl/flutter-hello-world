@@ -20,6 +20,7 @@ deploy:
   bucket: "tbs-bible-app"
   skip_cleanup: true
   local_dir: build/ios/iphoneos
+  region: eu-west-1
   on:
     branch: release
   secret_access_key:
